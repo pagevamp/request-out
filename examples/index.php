@@ -10,8 +10,8 @@ $request->setTargetUrl('https://graph.facebook.com/343049269118318');//
 //will set params as post
 
 $request->setParams(['access_token' => 'access_token']);
-$request->setHeader(['Authorization' => 'Bearer access_token']);//add header
-$request->setHeaders([
+$request->addHeader(['Authorization' => 'Bearer access_token']);//add header
+$request->addHeaders([
     'header1' => 'value1',
     'header2' => 'value2',
 ]);//appends multiple headers

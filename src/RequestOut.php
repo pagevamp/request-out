@@ -7,7 +7,7 @@ use GuzzleHttp\Client;
 class RequestOut
 {
     private $targetUrl;
-    private $params;
+    private $params = [];
     private $client;
     private $requestType;
     private $headers = [];
@@ -23,15 +23,27 @@ class RequestOut
         $this->params = $formData;
     }
 
-    public function setHeader($header)
+    public function addHeader($header)
     {
         $this->headers = array_merge($this->headers, $header);
     }
 
-    public function setHeaders(array $headers)
+    public function addHeaders(array $headers)
     {
         foreach ($headers as $header) {
-            $this->setHeader($header);
+            $this->addHeader($header);
+        }
+    }
+
+    public function addParam($param)
+    {
+        $this->headers = array_merge($this->params, $param);
+    }
+
+    public function addParams(array $params)
+    {
+        foreach ($params as $param) {
+            $this->addParam($param);
         }
     }
 
