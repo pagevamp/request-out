@@ -1,6 +1,6 @@
 <?php
 
-namespace PV;
+namespace Pv;
 
 use GuzzleHttp\Client;
 
