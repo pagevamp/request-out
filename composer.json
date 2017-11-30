@@ -1,0 +1,17 @@
+{
+    "name": "pagevamp/request-out",
+    "autoload" : {
+        "psr-4" : {
+            "Pv\\" : "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Naren",
+            "email": "developer.naren@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
