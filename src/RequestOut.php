@@ -75,6 +75,13 @@ class RequestOut
         return $this->request();
     }
 
+    public function head()
+    {
+        $this->requestType = 'head';
+
+        return $this->request();
+    }
+
     public function getTargetUrl()
     {
         return $this->targetUrl;
@@ -114,7 +121,7 @@ class RequestOut
      */
     private function getRequestInstance($requestType)
     {
-        if (in_array($requestType, ['get', 'delete'])) {
+        if (in_array($requestType, ['get', 'delete', 'head'])) {
             if (!empty($this->params)) {
                 $this->targetUrl .= '?'.http_build_query($this->params);
             }
