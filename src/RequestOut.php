@@ -13,9 +13,9 @@ class RequestOut
     private $headers = [];
     private $dataType = 'form_params';
 
-    public function __construct($targetUrl = null, $formData = [])
+    public function __construct($targetUrl = null, $formData = [], $options = [])
     {
-        $this->client = new Client();
+        $this->client = new Client($options);
         if (!empty($targetUrl)) {
             $this->targetUrl = $targetUrl;
         }
